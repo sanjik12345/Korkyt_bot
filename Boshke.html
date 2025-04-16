@@ -197,7 +197,7 @@
     <div id="quiz-1" class="quiz-container">
         <div class="question">1-есеп: Бөшкенің жалпы биіктігін табыңыз</div>
         <img src="boshke.jpeg" class="task-image" alt="Бөшке суреті">
-        <button class="visual-btn">3D модельді қарау</button>
+        <a href="https://sketchfab.com/3d-models/8f878441a104445b83083920e198c072" target="_blank" class="visual-btn">3D модельді қарау</a>
         
         <div class="options">
             <div class="option" data-correct="false">A) 55 см</div>
@@ -212,7 +212,7 @@
     <div id="quiz-2" class="quiz-container hidden">
         <div class="question">2-есеп: Бөшке қақпағының радиусын табыңыз</div>
         <img src="boshke.jpeg" class="task-image" alt="Бөшке суреті">
-        <button class="visual-btn">3D модельді қарау</button>
+        <a href="https://sketchfab.com/3d-models/8f878441a104445b83083920e198c072" target="_blank" class="visual-btn">3D модельді қарау</a>
         
         <div class="options">
             <div class="option" data-correct="false">A) 12 см</div>
@@ -227,7 +227,7 @@
     <div id="quiz-3" class="quiz-container hidden">
         <div class="question">3-есеп: Бөшкенің табанының ауданы қақпағының ауданынан қанша есе үлкен екенін табыңыз</div>
         <img src="boshke.jpeg" class="task-image" alt="Бөшке суреті">
-        <button class="visual-btn">3D модельді қарау</button>
+        <a href="https://sketchfab.com/3d-models/8f878441a104445b83083920e198c072" target="_blank" class="visual-btn">3D модельді қарау</a>
         
         <div class="options">
             <div class="option" data-correct="false">A) 5 есе</div>
@@ -242,7 +242,7 @@
     <div id="quiz-4" class="quiz-container hidden">
         <div class="question">4-есеп: Бөшкеге 20 см биіктікке дейін су құйылса, құйылған су көлемін табыңыз</div>
         <img src="boshke.jpeg" class="task-image" alt="Бөшке суреті">
-        <button class="visual-btn">3D модельді қарау</button>
+        <a href="https://sketchfab.com/3d-models/8f878441a104445b83083920e198c072" target="_blank" class="visual-btn">3D модельді қарау</a>
         
         <div class="options">
             <div class="option" data-correct="true">A) 18000π см³</div>
@@ -257,7 +257,7 @@
     <div id="quiz-5" class="quiz-container hidden">
         <div class="question">5-есеп: Бөшкенің жалпы сыйымдылығының 9/10 бөлігіне су құйылған болса, су деңгейінің биіктігін табыңыз</div>
         <img src="boshke.jpeg" class="task-image" alt="Бөшке суреті">
-        <button class="visual-btn">3D модельді қарау</button>
+        <a href="https://sketchfab.com/3d-models/8f878441a104445b83083920e198c072" target="_blank" class="visual-btn">3D модельді қарау</a>
         
         <div class="options">
             <div class="option" data-correct="false">A) 52,6 см</div>
@@ -293,7 +293,6 @@
         const mistakesContainer = document.getElementById('mistakes-container');
         const mistakesList = document.getElementById('mistakes-list');
         const chatgptBtn = document.getElementById('chatgpt-btn');
-        const visualBtns = document.querySelectorAll('.visual-btn');
         
         let currentQuiz = 0;
         const userAnswers = Array(quizzes.length).fill(null);
@@ -404,12 +403,6 @@
             const fullQuestion = `${questionText}\nНұсқалар: ${questionOptions}`;
             const chatUrl = `https://chat.openai.com/?q=${encodeURIComponent(fullQuestion)}`;
             window.open(chatUrl, '_blank');
-        });
-        
-        visualBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                alert('3D модель көрсетілуде... Бұл фигураның құрылымын жақсырақ түсінуге көмектеседі.');
-            });
         });
         
         showQuiz(0);
